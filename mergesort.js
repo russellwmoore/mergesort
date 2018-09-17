@@ -4,8 +4,8 @@ function mergeSort(l, r) {
   let rightPointer = 0;
 
   // [2,5,7] [1,4,8,10]
-  while(l[leftPointer] !== undefined && r[rightPointer] !== undefined) {
-    if(l[leftPointer] < r[rightPointer]) {
+  while (l[leftPointer] !== undefined && r[rightPointer] !== undefined) {
+    if (l[leftPointer] < r[rightPointer]) {
       sortedArr.push(l[leftPointer])
       leftPointer++;
     } else {
@@ -17,7 +17,7 @@ function mergeSort(l, r) {
   let pointerInArr;
   let targetArr;
 
-  if(l[leftPointer] === undefined) {
+  if (l[leftPointer] === undefined) {
     pointerInArr = rightPointer;
     targetArr = r;
   } else {
@@ -25,21 +25,21 @@ function mergeSort(l, r) {
     targetArr = l;
   }
 
-while(targetArr[pointerInArr] !== undefined){
-  sortedArr.push(targetArr[pointerInArr]);
-  pointerInArr++;
-}
-return sortedArr;
+  while (targetArr[pointerInArr] !== undefined) {
+    sortedArr.push(targetArr[pointerInArr]);
+    pointerInArr++;
+  }
+  return sortedArr;
 }
 
-function split(arr){
+function split(arr) {
   if (arr.length === 1) {
     return arr;
   }
 
   let pivot = Math.floor((arr.length / 2));
 
-  let left = split(arr.slice(0,pivot));
+  let left = split(arr.slice(0, pivot));
   let right = split(arr.slice(pivot));
 
   // let [left,right] = extraneousSplit(arr);
@@ -49,17 +49,17 @@ function split(arr){
   return mergedArr;
 }
 
-console.log(split([1,7,5,3,21,332]));
+console.log(split([1, 7, 5, 3, 21, 332]));
 
-function extraneousSplit(arr) {
+// function extraneousSplit(arr) {
 
 
 
-  let pivot = Math.floor((arr.length / 2));
+//   let pivot = Math.floor((arr.length / 2));
 
-  let left = split(arr.slice(0,pivot));
-  let right = split(arr.slice(pivot));
+//   let left = split(arr.slice(0,pivot));
+//   let right = split(arr.slice(pivot));
 
-  return [left, right];
+//   return [left, right];
 
-}
+// }
